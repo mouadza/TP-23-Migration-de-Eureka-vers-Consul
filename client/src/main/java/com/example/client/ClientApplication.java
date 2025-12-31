@@ -8,12 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ClientApplication {
-
+@EnableDiscoveryClient
+public class ClientServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ClientApplication.class, args);
+        SpringApplication.run(ClientServiceApplication.class, args);
     }
-
     @Bean
     CommandLineRunner initializeH2Database(ClientRepository clientRepository) {
         return args -> {
